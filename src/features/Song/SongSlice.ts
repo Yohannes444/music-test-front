@@ -40,6 +40,7 @@ export const songsSlice = createSlice({
     },
     // update song
     updateSong: (state,action: PayloadAction<Song>) => {
+      console.log(action)
       state.isLoading = true;
       state.error = null;
     },
@@ -58,6 +59,8 @@ export const songsSlice = createSlice({
     },
     // delete song
     deleteSong: (state,action: PayloadAction<string>) => {
+      console.log(action)
+
       state.isLoading = true;
       state.error = null
     },
