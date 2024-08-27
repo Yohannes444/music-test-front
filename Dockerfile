@@ -1,19 +1,26 @@
-FROM node:18.17.0
+# Use an official Node.js runtime as a parent image
+FROM node:18-alpine
 
-ARG NEXT_PUBLIC_API_URL
+# Set the working directory in the container
+WORKDIR /app
 
-ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+# Copy the package.json and package-lock.json files to the container
+COPY package*.json ./
 
-ENV PATH /app/node_modules/.bin:$PATH 
-COPY package*.json ./ 
-RUN npm install -g npm@10.4.0
+# Install dependencies
 RUN npm install
 
-COPY . . 
+# Copy the rest of the application files to the container
+COPY . .
+
+# Build the React app
 RUN npm run build
-# RUN serve -s dist -l 8809 
-CMD  npm run start
 
-EXPOSE 24000
+# Serve the React app using a lightweight web server
+RUN npm install -g serve
 
+# Expose port 3000 to the outside world
+EXPOSE 3000
 
+# Command to run the application
+CMD ["serve", "-s", "build"]
