@@ -70,7 +70,7 @@ export const NavLink = styled(RouterNavLink)`
     color: #535C91;
   }
   &.active {
-    color: #1B1A55;
+    color: #fff;
     font-weight: bold;
   }
   @media (max-width: 768px) {

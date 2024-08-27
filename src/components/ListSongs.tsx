@@ -29,7 +29,7 @@ const ListSongs: React.FC = () => {
     null
   );
   const [currentPage, setCurrentPage] = useState(1);
-  const songsPerPage = 5; // Reduce number of cards per row to give more space
+  const songsPerPage = 8; // Reduce number of cards per row to give more space
 
   useEffect(() => {
     dispatch(fetchSongs());
