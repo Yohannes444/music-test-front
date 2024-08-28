@@ -4,7 +4,7 @@
 
 import { Song } from "../types/types";
 import { NewSong } from "../types/types";
-const API_BASE_URL = `${import.meta.env.VITE_API_URL}song`;
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/song`;
 
 export const fetchSongsApi = async (): Promise<Song[]> => {
   const response = await fetch(`${API_BASE_URL}`);

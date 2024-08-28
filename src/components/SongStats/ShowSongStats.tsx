@@ -14,6 +14,7 @@ import {
   Container,
   Heading,
   ExpandableList,
+  ExpandableListItem,
 } from "../../assets/style/ShowSongStatsStyle";
 
 const ShowSongStats: React.FC = () => {
@@ -77,7 +78,10 @@ const ShowSongStats: React.FC = () => {
                 <Heading>Songs By Genre</Heading>
                 <ExpandableList>
                   {songStats.songsByGenre.map((genreInfo, index) => (
-                    <ExpandableList.Item key={genreInfo._id} isOpen={openIndex === index}>
+                    <ExpandableListItem
+                      key={genreInfo._id}
+                      isOpen={openIndex === index}
+                    >
                       <h3 onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                         {genreInfo._id} <span>{genreInfo.TotalSongsByGenre}</span>
                         {openIndex === index ? <FaChevronDown /> : <FaChevronRight />}
@@ -87,7 +91,7 @@ const ShowSongStats: React.FC = () => {
                           <li key={song}>{song}</li>
                         ))}
                       </ul>
-                    </ExpandableList.Item>
+                    </ExpandableListItem>
                   ))}
                 </ExpandableList>
               </>
@@ -97,7 +101,10 @@ const ShowSongStats: React.FC = () => {
                 <Heading>Songs By Artist</Heading>
                 <ExpandableList>
                   {songStats.songsByArtist.map((artistInfo, index) => (
-                    <ExpandableList.Item key={artistInfo._id} isOpen={openIndex === index}>
+                    <ExpandableListItem
+                      key={artistInfo._id}
+                      isOpen={openIndex === index}
+                    >
                       <h3 onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                         {artistInfo._id} <span>{artistInfo.TotalSongsByArtist}</span>
                         {openIndex === index ? <FaChevronDown /> : <FaChevronRight />}
@@ -107,7 +114,7 @@ const ShowSongStats: React.FC = () => {
                           <li key={song}>{song}</li>
                         ))}
                       </ul>
-                    </ExpandableList.Item>
+                    </ExpandableListItem>
                   ))}
                 </ExpandableList>
               </>
@@ -117,7 +124,10 @@ const ShowSongStats: React.FC = () => {
                 <Heading>Songs By Album</Heading>
                 <ExpandableList>
                   {songStats.songsByAlbum.map((albumInfo, index) => (
-                    <ExpandableList.Item key={albumInfo._id} isOpen={openIndex === index}>
+                    <ExpandableListItem
+                      key={albumInfo._id}
+                      isOpen={openIndex === index}
+                    >
                       <h3 onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                         {albumInfo._id} <span>{albumInfo.TotalSongsByAlbum}</span>
                         {openIndex === index ? <FaChevronDown /> : <FaChevronRight />}
@@ -127,7 +137,7 @@ const ShowSongStats: React.FC = () => {
                           <li key={song}>{song}</li>
                         ))}
                       </ul>
-                    </ExpandableList.Item>
+                    </ExpandableListItem>
                   ))}
                 </ExpandableList>
               </>
@@ -137,7 +147,10 @@ const ShowSongStats: React.FC = () => {
                 <Heading>Albums By Artist</Heading>
                 <ExpandableList>
                   {songStats.albumsByArtist.map((albumInfo, index) => (
-                    <ExpandableList.Item key={albumInfo._id} isOpen={openIndex === index}>
+                    <ExpandableListItem
+                      key={albumInfo._id}
+                      isOpen={openIndex === index}
+                    >
                       <h3 onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                         {albumInfo._id} <span>{albumInfo.TotalAlbums}</span>
                         {openIndex === index ? <FaChevronDown /> : <FaChevronRight />}
@@ -147,7 +160,7 @@ const ShowSongStats: React.FC = () => {
                           <li key={album}>{album}</li>
                         ))}
                       </ul>
-                    </ExpandableList.Item>
+                    </ExpandableListItem>
                   ))}
                 </ExpandableList>
               </>

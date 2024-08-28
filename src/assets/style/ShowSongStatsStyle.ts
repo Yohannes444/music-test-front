@@ -70,7 +70,7 @@ export const ExpandableList = styled.div`
   }
 `;
 
-ExpandableList.Item = styled.div<{ isOpen: boolean }>`
+export const ExpandableListItem = styled.div<{ isOpen: boolean }>`
   display: flex;
   flex-direction: column;
   cursor: pointer;

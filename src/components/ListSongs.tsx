@@ -20,7 +20,7 @@ import { IoMdAdd } from "react-icons/io";
 
 const ListSongs: React.FC = () => {
   const dispatch = useDispatch();
-  const { songs, isLoading, error } = useSelector(
+  const { songs, isLoading } = useSelector(
     (state: RootState) => state.songs
   );
 

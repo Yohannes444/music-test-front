@@ -30,7 +30,7 @@ const SongCardComponent: React.FC<SongCardProps> = ({ song, onEdit, onDelete }) 
           <MdOutlineDeleteOutline />
         </CustomButton>
       </ButtonContainer>
-      {isYouTubeUrl(song.file) ? (
+      {song.file && isYouTubeUrl(song.file) ? (
         <iframe
           width="100%"
           height="200"
@@ -41,7 +41,7 @@ const SongCardComponent: React.FC<SongCardProps> = ({ song, onEdit, onDelete }) 
           allowFullScreen
         />
       ) : (
-        <SongImage src={song.file} />
+        song.file && <SongImage src={song.file} />
       )}
       <SongTitle>{song.title} || {song.artist}</SongTitle>
       <SongArtist>{song.genre}</SongArtist>
