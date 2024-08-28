@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --force
 
 # Copy the rest of the application files to the container
 COPY . .
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Serve the React app using a lightweight web server
-RUN npm install -g serve
+RUN npm install --force -g serve
 
 # Expose port 3000 to the outside world
 EXPOSE 3000
