@@ -27,6 +27,7 @@ export const songsSlice = createSlice({
     },
     // create song
     createSong: (state, action: PayloadAction<NewSong>) => {
+      console.log(action)
       state.isLoading = true;
       state.error = null;
     },
