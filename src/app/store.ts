@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import songsReducer from '../features/Song/SongSlice'
+import songsSlice from '../features/Song/SongSlice'
 import songSaga from '../saga/song/songSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
     reducer: {
-        songs: songsReducer
+        songs: songsSlice
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
 });
